@@ -1,0 +1,283 @@
+/* PODSTAWOWE STYLE STRONY */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.app-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    padding: 3px 0;
+    margin-top: auto;
+}
+
+/* KONTEKST I WYNIKI */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.result {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.code-wrapper {
+    position: relative;
+}
+
+/* PANEL DOLNY – WPROWADZANIE */
+.chat-bar {
+    display: flex;
+    align-items: flex-start;
+    background: #eee;
+    border-radius: 15px;
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+}
+
+#codeInput {
+    flex: 1;
+    min-height: 80px;
+    max-height: 200px;
+    padding: 8px 12px;
+    resize: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    overflow-y: auto;
+    color: black;
+}
+
+#codeInput.dragover {
+    border: 2px dashed lightskyblue;
+    background-color: #e8f4fd;
+}
+
+.file-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#hiddenFileInput {
+    display: none;
+}
+
+/* PRZYCISKI I AKCJE */
+.bar-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.main-actions,
+.solid-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.actions button,
+#copyAllBtn,
+#themeToggleBtn {
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.actions button:hover,
+#copyAllBtn:hover,
+#themeToggleBtn:hover {
+    background-color: #ddd;
+}
+
+#copyAllBtn {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+#themeToggleBtn {
+    margin-left: auto;
+}
+
+/* LISTA PLIKÓW */
+.file-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0;
+    min-width: 160px;
+    font-size: 12px;
+}
+
+.file-list ul,
+#uploadedFileList {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.file-list li,
+#uploadedFileList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    color: #555;
+    padding: 0;
+}
+
+.file-list li button {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    color: #c00;
+}
+
+#noFilesText {
+    font-style: italic;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #ccc;
+}
+
+/* PRZYCISK KOPIOWANIA */
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 10;
+}
+
+.copy-btn:hover {
+    background: #eee;
+}
+
+
+/* LOADER */
+.loading-box {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.loading-bar > div {
+    height: 100%;
+    background: #3498db;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* MOTYW CIEMNY */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .app-header,
+body.dark-mode .actions,
+body.dark-mode .chat-bar,
+body.dark-mode .result,
+body.dark-mode textarea,
+body.dark-mode .file-list,
+body.dark-mode button {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .actions button,
+body.dark-mode #copyAllBtn,
+body.dark-mode #themeToggleBtn {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    border-color: #444;
+}
+
+body.dark-mode .actions button:hover,
+body.dark-mode #copyAllBtn:hover,
+body.dark-mode #themeToggleBtn:hover {
+    background-color: #333;
+}
+
+body.dark-mode .copy-btn {
+    background: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark-mode .copy-btn:hover {
+    background: #3a3a3a;
+}
+
+body.dark-mode .app-footer {
+    color: #666;
+}

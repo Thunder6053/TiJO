@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AI Test Assistant</title>
+    <link rel="stylesheet" href="static/style.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+<header class="app-header">
+    <h1>AI Assistant</h1>
+    <button onclick="toggleTheme()" id="themeToggleBtn">Tryb ciemny</button>
+</header>
+
+<div class="chat-container">
+
+    <!-- Pasek ładowania -->
+    <div id="loadingBox" style="display: none;">
+        Przetwarzanie...
+        <div class="loading-bar">
+            <div id="progressFill"></div>
+        </div>
+    </div>
+
+    <!-- Wynik -->
+    <button id="copyAllBtn">Kopiuj wszystko</button>
+    <div class="result" id="result"></div>
+
+    <!-- Dolny pasek -->
+    <div class="chat-bar" id="dropZone">
+        <!-- Ikona + -->
+        <label for="hiddenFileInput" class="file-icon" title="Dodaj pliki">＋</label>
+        <input type="file" id="hiddenFileInput" multiple accept=".py,.js,.txt,.html,.ts,.php,.java">
+
+        <!-- Pole tekstowe -->
+        <textarea id="codeInput" rows="1" placeholder="Wklej kod, wpisz opis funkcji lub przeciągnij plik..."
+                  oninput="autoResize(this)"></textarea>
+
+        <!-- Sekcja przycisków + pliki razem -->
+        <div class="bar-left">
+            <!-- Przyciski -->
+            <div class="actions">
+                <div class="main-actions">
+                    <button onclick="generateQAUniversal()">Generuj testy</button>
+                    <button onclick="generateSecurityUniversal()">Analiza bezpieczeństwa</button>
+                </div>
+                <div class="solid-buttons">
+                    <button title="Single Responsibility Principle" onclick="analyzeSOLID('SRP')">SRP</button>
+                    <button title="Open/Closed Principle" onclick="analyzeSOLID('OCP')">OCP</button>
+                    <button title="Liskov Substitution Principle" onclick="analyzeSOLID('LSP')">LSP</button>
+                    <button title="Interface Segregation Principle" onclick="analyzeSOLID('ISP')">ISP</button>
+                    <button title="Dependency Inversion Principle" onclick="analyzeSOLID('DIP')">DIP</button>
+                </div>
+            </div>
+
+            <!-- Lista plików -->
+            <div class="file-list">
+                <span id="noFilesText">Brak plików</span>
+                <ul id="uploadedFileList"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="static/script.js"></script>
+
+</body>
+<footer class="app-footer">
+    &copy; 2025 AI Assistant. Wszelkie prawa zastrzeżone. Jakub Kurek
+</footer>
+</html>
