@@ -1,27 +1,32 @@
-# AI Test Assistant
+# AI Assistant – Webowa aplikacja wspomagająca testowanie kodu
 
-**AI Test Assistant** to aplikacja webowa wykorzystująca Google Gemini do automatycznego generowania testów jednostkowych, analizy bezpieczeństwa kodu oraz weryfikacji zasad SOLID.
+**AI Assistant** to przeglądarkowa aplikacja wspierająca proces testowania oprogramowania. Wykorzystuje technologię **Google Gemini** do automatycznego generowania testów jednostkowych, analizy bezpieczeństwa kodu oraz oceny zgodności z zasadami **SOLID**. Projekt powstał jako narzędzie wspomagające testerów, programistów i studentów w codziennej pracy z kodem źródłowym.
 
-## Funkcje
+## Autor
+
+**Jakub Kurek**  
+Student Informatyki Akademii Tarnowskiej w Tarnowie, 2025
+
+## Funkcje aplikacji
 
 - Generowanie testów jednostkowych na podstawie kodu źródłowego
-- Analiza bezpieczeństwa kodu
-- Sprawdzenie zgodności kodu z zasadami SOLID:
-  - SRP (Single Responsibility Principle)
-  - OCP (Open/Closed Principle)
-  - LSP (Liskov Substitution Principle)
-  - ISP (Interface Segregation Principle)
-  - DIP (Dependency Inversion Principle)
-- Obsługa plików `.py`, `.js`, `.ts`, `.html`, `.php`, `.txt`, `.java`
-- Możliwość wklejania kodu lub przesyłania plików
-- Tryb ciemny i jasny z zapamiętywaniem preferencji
+- Analiza potencjalnych luk bezpieczeństwa w kodzie
+- Weryfikacja zgodności z zasadami SOLID:
+  - **SRP** – Single Responsibility Principle
+  - **OCP** – Open/Closed Principle
+  - **LSP** – Liskov Substitution Principle
+  - **ISP** – Interface Segregation Principle
+  - **DIP** – Dependency Inversion Principle
+- Wsparcie dla plików `.py`, `.js`, `.ts`, `.html`, `.php`, `.txt`, `.java`
+- Obsługa przeciągania plików lub bezpośredniego wklejania kodu
+- Przejrzysty interfejs z trybem ciemnym i jasnym (zapamiętywanie motywu)
 
 ## Wymagania
 
 - Python 3.8+
-- Klucz API do Google Gemini (`GEMINI_API_KEY` w pliku `.env`)
+- Klucz API do Google Gemini (ustaw w `.env` jako `GEMINI_API_KEY`)
 - Flask
-- Biblioteka `google-generativeai`
+- google-generativeai
 
 ## Struktura projektu
 
@@ -35,3 +40,26 @@
   - `script.js` – plik JavaScript obsługujący UI i integrację z backendem
 - `README.md` – dokumentacja projektu
 - `requirements.txt` - lista wymaganych bibliotek Pythona
+
+## Zrzuty ekranu
+
+## Interfejs główny
+![screen1](Screenshots/1.png)
+![screen2](Screenshots/2.png)
+
+## SRP
+![screen3](Screenshots/3.png)
+![screen4](Screenshots/4.png)
+![screen5](Screenshots/5.png)
+![screen6](Screenshots/6.png)
+![screen7](Screenshots/7.png)
+![screen8](Screenshots/8.png)
+
+## Generowanie testów
+![screen9](Screenshots/9.png)
+![screen10](Screenshots/10.png)
+![screen11](Screenshots/11.png)
+![screen12](Screenshots/12.png)
+
+## Nagranie działania aplikacji 
+[Zobacz film demo](Demo/AI_Assistant.mp4)
